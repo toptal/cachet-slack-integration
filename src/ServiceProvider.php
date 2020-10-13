@@ -89,7 +89,7 @@ class ServiceProvider extends BaseServiceProvider
         /**
          * Send Slack notification on incident updates.
          */
-        $events->listen('CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent', function (IncidentWasUpdatedEvent $event) {
+        $events->listen('CachetHQ\Cachet\Bus\Events\Incident\IncidentWasUpdatedEvent-muted', function (IncidentWasUpdatedEvent $event) {
             $handler = new IncidentWasUpdatedHandler(
                 $event->incident->id,
                 $event->incident->status,
